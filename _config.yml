@@ -1,0 +1,51 @@
+# User Settings | Edit these according to your site
+
+title: Tech thoughts
+email: bastien@semene.fr
+author: Bastien Semene
+
+description: "This is a personal blog about ideas, discussions, tests, production setups, or whatever."
+url: "http://bastien.semene.fr" # the base hostname & protocol for your site
+baseurl: "/" # the subpath of your site, e.g. /blog
+twitter_username: Sabbasth
+github_username:  Sabbasth
+
+permalink:          /:year/:title.html
+
+paginate: 4
+paginate_path: "/page/:num"
+comments: true
+
+heading_font: Lobster 
+about_footer: true
+short_bio: >
+    I like my family, my friends, and computing technologies.
+profile_picture: https://avatars0.githubusercontent.com/u/5691241?v=3&s=460
+
+google_analytics: true
+tracking_id: UA-76761654-1
+
+# Build settings | Do not edit anything below this
+markdown: kramdown
+
+gems:
+  - jekyll-paginate
+
+sass:
+  style:            compressed
+  sass_dir:         _sass
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
