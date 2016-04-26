@@ -1,0 +1,17 @@
+# Setup
+title:        The DevOps corner
+tagline:      Thoughts & Ideas around DevOps philosophy
+baseurl:      ""
+paginate:     1
+
+# About/contact
+author:
+  name:       Bastien Semene
+  url:        http://bastien.semene.fr
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: redcarpet
