@@ -11,8 +11,11 @@ RUN apk add --no-cache \
 &&  gem install github-pages \
 
 # Delete build dependencies
-&&  apk del build-dependencies
+&&  apk del --no-cache \
+            build-dependencies
 
 ENTRYPOINT ["/usr/bin/jekyll"]
+
+EXPOSE "4000"
 
 CMD ["serve", "--watch", "--source", "/srv/jekyll", "--destination", "/srv/jekyll/_site", "--port", "4000", "--host", "0.0.0.0"]
