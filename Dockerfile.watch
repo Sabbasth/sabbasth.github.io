@@ -1,0 +1,3 @@
+FROM sabbasth/github-pages
+
+RUN gem install jekyll
