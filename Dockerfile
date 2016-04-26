@@ -1,13 +1,18 @@
-FROM ubuntu:14.04
+FROM alpine:3.3
 
-RUN apt-get update \
-&&  apt-get install -y \
-					ruby2.0 \
-					ruby2.0-dev build-essential zlib1g-dev \
-&&  update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby2.0 1 && update-alternatives --install /usr/bin/gem gem /usr/bin/gem2.0 1
+RUN apk add --no-cache \
+            ruby ruby-nokogiri ruby-rdoc ruby-irb \
 
-RUN gem install github-pages
+# Build dependencies
+&&   apk add --no-cache --virtual build-dependencies \
+            ruby-dev build-base libffi-dev zlib-dev \
 
-ENTRYPOINT ["/usr/local/bin/jekyll"]
+# Install Github Pages
+&&  gem install github-pages \
+
+# Delete build dependencies
+&&  apk del build-dependencies
+
+ENTRYPOINT ["/usr/bin/jekyll"]
 
 CMD ["serve", "--watch", "--source", "/srv/jekyll", "--destination", "/srv/jekyll/_site", "--port", "4000", "--host", "0.0.0.0"]
