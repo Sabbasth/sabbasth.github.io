@@ -27,5 +27,5 @@ Then just go to `http://localhost:4000` on your favorite browser!
 
 Issue
 =====
-To fix the issue I had to upgrade Jekyll to the current release (3.1.3 as of now). I did an image to simplify this hard work !
-just `docker pull sabbasth/github-pages:watch`
+To fix the _auto-regeneration issue_, I had to upgrade Jekyll to the current release (3.1.3 as of now). I did an image to simplify this hard work !
+just pull `sabbasth/github-pages:watch` instead of `sabbasth/github-pages`
